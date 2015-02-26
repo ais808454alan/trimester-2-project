@@ -1,0 +1,92 @@
+<title> Instruction </title>
+
+<script type="text/javascript" src="script/soundmanager2.js"></script>
+<script type="text/javascript" src="script/loadsoundchrome.js"></script>
+
+<center>
+    <script type="text/javascript" src="script/processing-1.4.1.js"></script>
+    <script type="text/processing" data-processing-target="mycanvas">
+
+/* @pjs globalKeyEvents = "true"; */
+
+PImage sr;
+PImage obj;
+PImage con;
+PImage abi;
+int objv; 
+int conv; 
+int abiv;  
+void setup()
+{  
+
+    size( 1147, 660);  
+    background(0,0,0);
+    frameRate( 30 );
+
+	sr = loadImage("image/map.jpg")
+	obj = loadImage("image/obj.png")
+	con = loadImage("image/control.png")
+	abi = loadImage("image/Ability.png")
+	objv = 1;
+	conv = 0;
+	abiv = 0;
+}  
+
+void draw()
+{
+    image(sr,0,0);
+      
+    if(mousePressed == true && mouseButton == LEFT)
+	{
+		if(mouseX > 250 && mouseX < 350 && mouseY > 110 && mouseY < 130)
+		{
+			objv = 1;
+			conv = 0;
+			abiv = 0;
+		}
+		if(mouseX > 250 && mouseX < 350 && mouseY > 130 && mouseY < 150)
+		{
+			objv = 0;
+			conv = 1;
+			abiv = 0;
+		}
+		if(mouseX > 250 && mouseX < 350 && mouseY > 150 && mouseY < 170)
+		{
+			objv = 0;
+			conv = 0;
+			abiv = 1;
+		}
+
+	}
+    
+    if(objv == 1)
+    {
+    	image(obj,100,20,900,550);
+    }
+    if(conv == 1)
+    {
+    	image(con,100,20,900,550);
+    }
+    if(abiv == 1)
+    {
+    	image(abi,100,20,900,550);
+    }
+    
+    if(mousePressed == true && mouseButton == LEFT)
+    {
+    	if(mouseX > 755 && mouseX < 845 &&
+    		mouseY > 510 && mouseY < 535)
+    	{
+    		link("game.html");
+    	}
+    }
+
+    
+}
+
+void mousePressed(){
+	
+}
+    </script>
+    <canvas id="mycanvas"></canvas>
+</center>

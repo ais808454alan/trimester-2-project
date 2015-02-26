@@ -1,0 +1,477 @@
+<title> Game </title>
+
+<script type="text/javascript" src="script/soundmanager2.js"></script>
+<script type="text/javascript" src="script/loadsoundchrome.js"></script>
+
+<center>
+    <script type="text/javascript" src="script/processing-1.4.1.js"></script>
+    <script type="text/processing" data-processing-target="mycanvas">
+
+/* @pjs globalKeyEvents = "true"; */
+
+PImage sr;
+PImage Cc;
+int chx;
+int chy;
+int delay = 4;
+int mx, my;
+PImage qr;
+int qr1;
+int qrx, qry;
+PImage q;
+int msx, msy;
+int q1;
+int qx, qy;
+int qcd;
+int qd;
+int mmsx, mmsy;
+int mm = 3;
+PImage ezq;
+int m = 5/7;
+int b = 160;
+int m2 = 325/397;
+int b2 = 0;
+int sp = 0;
+
+PImage minions;
+int minionsy;
+int minionsx;
+int counter1;
+int control1;
+int control2;
+int linex;
+int d;
+int sx, sy;
+int minionsy2;
+int minionsx2;
+int sx2, sy2;
+int d2;
+int minionsy3;
+int minionsx3;
+int sx3, sy3;
+int d3;
+int d4;
+int d5;
+int d6;
+int m3;
+int m4d;
+int counter2;
+int counterv;
+int controlv;
+int scontrolv = 0;
+int counterb;
+int bing;
+int pwardX, pwardY;
+int wardX, wardY;
+int wcd = 0;
+int ward = 0;
+int wardn = 1;
+
+PImage recall;
+
+void setup()
+{  
+    size( 1147, 660);  
+    background(0,0,0);
+    frameRate( 30 );
+	sr = loadImage("image/map.jpg")
+	ch = loadImage("image/Ezreal.png")
+
+	qr = loadImage("image/q range.png")
+	qr1 = 0;
+	q = loadImage("image/Mystic Shot.png")
+	q1 = 0;
+	qcd = 0;
+	mx = chx + 10;
+	my = chy + 16;
+	
+	ezq = loadImage("image/ezreal q.png")
+	ezi = loadImage("image/lv 1.png")
+	
+	//alan
+	minions = loadImage("image/minions.png")
+	minionsy = -50;
+	minionsx = 1000;
+	counter1 = 0;
+	control2 = 0;
+	control1 = 0;
+	linex = 700;
+	d = 0;
+	sx = 50;
+	sy = 50;
+	minionsy2 = -45;
+	minionsx2 = 975;
+	sx2 = 50;
+	sy2 = 50;
+	d2 = 0;
+	minionsy3 = -45;
+	minionsx3 = 915;
+	sx3 = 50;
+	sy3 = 50;
+	d3 = 0;
+	d4 = 0;
+	d5 = 0;
+	d6 = 0;
+	m3 = -2;
+	m4 = -3;
+	counter2= 0;
+	counterv= 0;
+	controlv= 0;
+	counterb= 20;
+	bing = 0;
+	recall = loadImage("image/recall.png")
+	pekka = loadImage("image/pekka.png")
+	pekkax = -45;
+	pekkay = 975;
+	pekkasx = 50;
+	sy2 = 50;
+	d2 = 0;
+	dw = loadImage("image/draven ward.png")
+	
+}  
+
+void draw()
+{
+	
+	
+    image(sr,0,0);
+    
+	image(ezi,0,0,1147, 700);
+
+	
+
+	image(minions,minionsx,minionsy,sx,sy);
+	
+	counter1 = counter1 + 1;
+	
+	
+	if(minionsy < (minionsx * m3 +1500))
+	{
+		counter2=1;
+	}
+	if(minionsy2 < (minionsx2 * m3 +1470))
+	{
+		counter2=1;
+	}
+	if(minionsy3 < (minionsx3 * m4 +1830))
+	{
+		counter2=1;
+	}
+
+	
+	if(counter2 ==1)
+	{
+		link("../gameover/gameover.html");
+	}
+
+	if(counter1 > 120)
+	{
+	control1 = 1;
+	}
+		
+	if( control1 ==1)
+	{
+	minionsx = minionsx - 2;
+	minionsy = minionsy + 2;
+	}
+	
+	
+	
+	d = (int)sqrt(sq((minionsx+25)-(msx+80))+sq((minionsy+25)-(msy+15)));
+	d4 = (int)sqrt(sq((minionsx+25)-(msx+20))+sq((minionsy+25)-(msy+40)));
+	
+
+	
+	if( d<25)
+	{
+		control2 = 1;	 
+		msx = msx +1000;
+		if(scontrolv = 1)
+		{
+		controlv += 1;
+		}
+	}
+
+	if( d4<25)
+	{
+		control2 = 1;	 
+		msx = msx +1000;
+		if(scontrolv = 1)
+		{
+		controlv += 1;
+		}
+	}
+	if(control2 ==1)
+	{
+		minionsy = minionsy + 1000 ;
+		minionsx = minionsx + 2;
+	}
+
+	image(minions,minionsx2,minionsy2,sx2,sy2);
+	
+	
+	d2 = (int)sqrt(sq((minionsx2+25)-(msx+80))+sq((minionsy2+25)-(msy+15)));
+	d5 = (int)sqrt(sq((minionsx2+25)-(msx+20))+sq((minionsy2+25)-(msy+40)));
+	
+	if ( counter1 > 200)
+	{
+		control1 = 2;
+	}
+	if( control1 == 2)
+	{
+		minionsy2 = minionsy2 + 2;
+		minionsx2 = minionsx2 - 2;
+		minionsy3 = minionsy3 + 3;
+		minionsx3 = minionsx3 - 3;
+	}
+scontrolv = 0;
+	if( d2<20)
+	{
+		control2 = 3;	 
+		msx = msx +1000;
+		scontrolv = 1;
+		if(scontrolv = 1)
+		{
+		controlv += 1;
+		}
+		
+	}
+	if( d5<20)
+	{
+		control2 = 3;	 
+		msx = msx +1000;
+		if(scontrolv = 1)
+		{
+		controlv += 1;
+		}
+	}
+	if(control2 ==3)
+	{
+		minionsy2 = minionsy2 + 1000 ;
+		minionsx2 = minionsx2 + 2;
+	}
+
+image(minions,minionsx3,minionsy3,sx3,sy3);
+	
+	d3 = (int)sqrt(sq((minionsx3+25)-(msx+80))+sq((minionsy3+25)-(msy+15)));
+	d6 = (int)sqrt(sq((minionsx3+25)-(msx+20))+sq((minionsy3+25)-(msy+40)));
+	
+	if( d3<20)
+	{
+		control2 = 4;	 
+		msx = msx +1000;
+		if(scontrolv = 1)
+		{
+		controlv += 1;
+		}
+	}
+	if( d6 < 20)
+	{
+		control2 = 4;	 
+		msx = msx +1000;
+		if(scontrolv = 1)
+		{
+		controlv += 1;
+		}
+	}
+
+	if(control2 ==4)
+	{
+		minionsy3 = minionsy3 + 1000 ;
+		minionsx3 = minionsx3 + 2;
+	}
+
+
+
+	if(controlv == 3)
+	{
+		link("../victory/victory.html");
+	}
+
+
+
+
+
+
+
+
+
+   if(q1 == 0)
+   {
+    	image(ch,chx,chy,70,84);
+	}
+    qd = (int)sqrt(sq(mmsx-msx)+sq(mmsy-msy));
+    
+    if(sp == 0)
+    {
+    	chx = 500;
+    	chy = 300;
+    }
+	
+    
+    if(mouseY + (mouseX * m + b ) > 660)
+    {
+   		 if(mouseY + (mouseX * m + b ) < 1070)
+    	{
+    		mm = 1;
+    		
+		}
+    }
+
+	if(mouseY + (mouseX * m + b ) < 660)
+   	 {
+   		mm = 3;
+   		sp = 3;
+    }
+     if(mouseY + (mouseX * m + b ) >1070)
+    {
+    	mm = 3;	
+    	sp = 3;
+	}
+  	
+  	if(qcd >= 1)
+  	{
+  		qcd -= 1;
+  		fill(0,0,0);
+  		rect(500,604,20,22);
+  		fill(255,255,255);
+  		text(qcd,504,620);
+  	
+  	}	
+  	
+	if(qr1 == 0)
+	{
+		qrx = 0;
+		qry = 0;
+	}
+	if(q1 == 0)
+	{
+		qx = 0;
+		qy = 0;
+		msx = msx +1000;
+	}
+	
+	if(qd > 240)
+	{
+		q1 = 0;
+	}
+	
+
+	
+	if(qr1 == 1 && qcd == 0)
+	{
+		image(qr,chx + 10,chy - 120,qrx,qry);
+		if(mousePressed == true && mouseButton == LEFT)
+		{	
+		
+			q1 = 1;
+			msx = chx + 10;
+			msy = chy + 50;
+		}	
+	}
+
+	if(q1 == 1)
+	{	
+		qx = 130;
+		qy = 35;
+		image(ezq,chx,chy,70,84);
+		image(q,msx,msy,qx,qy);
+		msx += 18 ;
+		msy -= 14;
+	}
+	if(sp == 1)
+	{
+		chx+=(mx-chx)/delay - 10;
+  		chy+=(my-chy)/delay - 16;
+	}	
+	if ( counterb ==0)
+	{
+		link("../mini shop/inshop.html");
+	}
+	if (bing == 1)
+	{
+		counterb = counterb - 1;
+	}
+text(wardn,348,628);
+if(wcd != 0)
+	{
+		wcd-= 1;
+	}
+	
+	if(ward == 1)
+	{
+		image(dw,wardX - 40,wardY - 62,80,80);
+
+		fill(0,0,0);
+		rect(342,614,15,15);
+			
+	}
+	
+}
+
+
+void keyPressed()
+{
+	if(key == 'q')
+	{
+		qr1 = 1;
+		qrx = 320;
+		qry = 230;
+	}
+	if(key == 'b')
+	{
+		bing = 1;
+	}
+}
+
+void keyReleased()
+{
+	if(key == 'q')
+	{
+		qr1 = 0;
+	}
+	if(wcd == 0)
+	{	
+		if(key == 't')
+		{
+			ward = 1;
+			wardX = mouseX;
+			wardY = mouseY;
+		}
+	}
+}
+
+void mouseClicked()
+{
+	
+	if(mouseButton == LEFT) 
+	{
+		mmsx = msx;
+		mmsy = msy;
+	}
+	if(mouseButton == RIGHT)
+	{
+		sp = 1;
+		if(mm == 1 && sp == 1)
+		{
+			mx = mouseX;
+			my = mouseY;
+		
+		}
+		
+	}
+			
+}	
+
+void mouseReleased()
+{
+	if(mouseButton == LEFT && qcd == 0 && keyPressed == true && key == 'q')
+	{
+		qcd = 60;
+			soundManager.play('s0');
+	}
+	
+}
+    </script>
+    <canvas id="mycanvas"></canvas>
+</center>

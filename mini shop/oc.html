@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> mini shop </title>
+<script src="processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage transcation;
+void setup()
+{
+
+size( 1600, 900);
+background(0,0,0);
+frameRate( 30 );
+
+transcation = loadImage("transcation.png");
+
+}
+
+
+void draw()
+{
+image(transcation,0,0);
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 690 && mouseX < 890 && mouseY > 180 && mouseY < 220)
+		{
+		link("inshop.html");
+		}
+	}
+
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>

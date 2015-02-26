@@ -1,0 +1,224 @@
+<html>
+<head>
+<title> mini shop </title>
+<script src="processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage shop;
+PImage edg; 
+PImage koro;
+int counter1;
+int stopcounter1;
+PImage fzzf;
+PImage edgf;
+PImage edgk;
+int counter2;
+
+void setup()
+{
+
+size( 1600, 900);
+background(0,0,0);
+frameRate( 30 );
+
+shop = loadImage("shop 1.jpg");
+edg = loadImage ("interface.jpg");
+counter1 = 0;
+counter2 = 0;
+stopcounter1 = 0;
+koro = loadImage ("koro1.jpg");
+fzzf = loadImage ("fzzf.jpg");
+edgf = loadImage ("edgf.jpg");
+edgk = loadImage ("edgk.jpg");
+ezreal = loadImage("Ezreal.png")
+}
+
+
+void draw()
+{
+
+image(shop,0,0);
+image(ezreal,800,400);
+image(edg,100,100);
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 660 && mouseX < 760 && mouseY > 435 && mouseY < 465)
+		{
+		link("co.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 155 && mouseY > 260 && mouseY < 270)
+		{
+		link("omg.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 195 && mouseY > 275 && mouseY < 285)
+		{
+		link("edg.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 205 && mouseY > 290 && mouseY < 300)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 175 && mouseY > 320 && mouseY < 330)
+		{
+		link("c9.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 215 && mouseY > 333 && mouseY < 343)
+		{
+		link("clg.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 195 && mouseY > 345 && mouseY < 355)
+		{
+		link("tsm.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 215 && mouseY > 378 && mouseY < 388)
+		{
+		link("ssw.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 215 && mouseY > 390 && mouseY < 402)
+		{
+		link("ssb.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 205 && mouseY > 405 && mouseY < 417)
+		{
+		link("skt.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 195 && mouseY > 430 && mouseY < 442)
+		{
+		link("tpa.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 205 && mouseY > 445 && mouseY < 457)
+		{
+		link("ahq.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 185 && mouseY > 470 && mouseY < 482)
+		{
+		link("xbm.html");
+		}
+	}
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 660 && mouseX < 760 && mouseY > 435 && mouseY < 465 && stopcounter1 == 0)
+		{
+		counter1 = counter1 + 1;
+		stopcounter1 = stopcounter1 + 1;
+		}
+	}
+	if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 660 && mouseX < 760 && mouseY > 435 && mouseY < 465 && stopcounter1 == 0)
+		{
+		counter1 = counter1 + 1;
+		stopcounter1 = stopcounter1 + 1;
+		}
+	}
+image(koro,305,220,40,40);	
+image(fzzf,345,220,40,40);
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 305 && mouseX < 345 &&
+    	mouseY > 220 && mouseY < 260 && stopcounter1 == 0)
+		{
+		counter1 = counter1 + 1;
+		stopcounter1 = stopcounter1 + 1;
+		}
+	}
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 350 && mouseX < 390 &&
+    	mouseY > 220 && mouseY < 260 && stopcounter1 == 0)
+    	{
+    	counter2 = counter2 + 1;
+    	stopcounter1= stopcounter1 + 1;
+    	}
+    }
+
+if (mouseX > 305 && mouseX < 345 &&
+    mouseY > 220 && mouseY < 260)
+    {
+    image(edgk,100,100);
+    image(koro,305,220,40,40);	
+	image(fzzf,345,220,40,40);
+    }
+if (mouseX > 345 && mouseX < 395 &&
+    mouseY > 220 && mouseY < 260)
+    {
+    image(edgf,100,100);
+    image(koro,305,220,40,40);	
+	image(fzzf,345,220,40,40);
+    }
+
+if(counter1 >= 1 && counter2 >= 0)
+	{
+	image(koro,113,595,40,40);
+	}
+	
+if(counter1 == 1 && counter2 == 1)
+	{
+	image(fzzf,150,595,40,40);
+	} 
+if(counter2 >= 1 && counter1 == 0)
+	{
+	image(fzzf,113,597);
+	}
+}
+void mouseReleased()
+{
+	stopcounter1 = 0;
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>

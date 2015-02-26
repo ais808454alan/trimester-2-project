@@ -1,0 +1,45 @@
+<html>
+<head>
+<title> mini shop </title>
+<script src="processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage shop;
+PImage shopkeeper;
+void setup()
+{
+
+size( 1600, 900);
+background(0,0,0);
+frameRate( 30 );
+
+shop = loadImage("shop 1.jpg");
+shopkeeper = loadImage("shop icon.jpg")
+
+}
+
+
+void draw()
+{
+
+ image(shop,0,0);
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 200 && mouseX < 900 && mouseY > 100 && mouseY < 600)
+		{
+		link("shop.html");
+		}
+	}
+
+	
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>

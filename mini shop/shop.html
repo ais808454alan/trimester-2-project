@@ -1,0 +1,53 @@
+<html>
+<head>
+<title> mini shop </title>
+<script src="processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage shop;
+PImage viking;
+void setup()
+{
+
+size( 1600, 900);
+background(0,0,0);
+frameRate( 30 );
+
+shop = loadImage("shop 1.jpg");
+viking = loadImage("viking.png")
+
+}
+
+
+void draw()
+{
+
+image(shop,0,0);
+
+fill(255,255,255);
+rect(150,300,100,80); 
+
+
+fill(0,0,0);
+text("A Yordle? Gah",150,310);
+
+fill(0,0,0)
+text("click to continue",150,380);	
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 0 && mouseX < 681 && mouseY > 0 && mouseY < 678)
+		{
+		link("inshop.html");
+		}
+	}
+	
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>

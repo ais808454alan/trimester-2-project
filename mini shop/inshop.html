@@ -1,0 +1,138 @@
+<html>
+<head>
+<title> mini shop </title>
+<script src="processing-1.4.1.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage shop;
+PImage viking;
+PImage menu; 
+void setup()
+{
+
+size( 1600, 900);
+background(0,0,0);
+frameRate( 30 );
+
+shop = loadImage("shop 1.jpg");
+viking = loadImage("viking.png");
+menu = loadImage ("interface.jpg");
+ezreal = loadImage("Ezreal.png")
+
+}
+
+
+void draw()
+{
+
+image(shop,0,0);
+image(menu,100,100);
+image(ezreal,800,400);
+
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 155 && mouseY > 260 && mouseY < 270)
+		{
+		link("omg.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 195 && mouseY > 275 && mouseY < 285)
+		{
+		link("edg.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 205 && mouseY > 290 && mouseY < 300)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 175 && mouseY > 320 && mouseY < 330)
+		{
+		link("c9.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 215 && mouseY > 333 && mouseY < 343)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 195 && mouseY > 345 && mouseY < 355)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 215 && mouseY > 378 && mouseY < 388)
+		{
+		link("ssw.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 215 && mouseY > 390 && mouseY < 402)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 205 && mouseY > 405 && mouseY < 417)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 195 && mouseY > 430 && mouseY < 442)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 205 && mouseY > 445 && mouseY < 457)
+		{
+		link("unavalible.html");
+		}
+	}
+
+if (mousePressed == true && mouseButton == LEFT)
+	{
+	if (mouseX > 125 && mouseX < 185 && mouseY > 470 && mouseY < 482)
+		{
+		link("xbm.html");
+		}
+	}
+fill(255,255,255);
+text("0",390,605);
+}
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
